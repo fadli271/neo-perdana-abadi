@@ -3,8 +3,8 @@ import tailwind from '@astrojs/tailwind';
 
 // https://docs.astro.build
 export default defineConfig({
-  site: 'https://fadli271.github.io',
-  base: '/neo-perdana-abadi',
+  site: 'https://fadlidevstudio.my.id',
+  base: '/',
   integrations: [
     tailwind({
       applyBaseStyles: false,
