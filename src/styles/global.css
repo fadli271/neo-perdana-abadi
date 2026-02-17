@@ -212,6 +212,18 @@ html, body {
   background: #ffffff;
 }
 
+.cta-panel {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+}
+
+.cta-list {
+  display: grid;
+  gap: 0.6rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .whatsapp-pill {
   position: fixed;
   right: 20px;
