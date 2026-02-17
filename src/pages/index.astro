@@ -357,7 +357,7 @@ import Nav from '../components/Nav.astro';
   <footer class="border-t border-[color:var(--border)] py-10 bg-white">
     <div class="container-npa flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[color:var(--muted)]">
       <div class="flex items-center gap-3">
-        <img src="/brand/logo-neo-perdana-abadi.jpeg" alt="Neo Perdana Abadi" class="h-6 w-auto rounded-sm" />
+        <img src={`${import.meta.env.BASE_URL}brand/logo-neo-perdana-abadi.jpeg`} alt="Neo Perdana Abadi" class="h-6 w-auto rounded-sm" />
         <span>© {new Date().getFullYear()} PT Neo Perdana Abadi</span>
       </div>
       <div class="flex items-center gap-6">
