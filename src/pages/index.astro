@@ -51,15 +51,15 @@ import Nav from '../components/Nav.astro';
         <div class="mt-10 divider-luxe"></div>
       </div>
       <div class="lg:col-span-5 relative reveal lg:mt-4" style="transition-delay: 120ms">
-        <div class="premium-card luxe rounded-2xl p-4 sm:p-6">
+        <div class="premium-card luxe rounded-2xl p-4 sm:p-6 parallax-tilt" data-parallax-card>
           <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Katering premium" class="w-full h-80 object-cover rounded-xl" loading="lazy" />
           <div class="mt-4">
-            <div class="rounded-2xl bg-[color:var(--bg-soft)] border border-[color:var(--border)] p-4">
+            <div class="rounded-2xl bg-[color:var(--bg-soft)] border border-[color:var(--border)] p-4 parallax-layer" data-parallax-depth="0.4">
               <div class="text-xs text-[color:var(--muted)]">Service Level</div>
               <div class="text-3xl font-semibold">99.9% On-time</div>
               <div class="text-sm text-[color:var(--muted)] mt-1">Ketepatan waktu pengiriman & penyajian</div>
             </div>
-            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <div class="mt-3 flex flex-wrap gap-2 text-xs parallax-layer" data-parallax-depth="0.2">
               <span class="chip">Hygiene First</span>
               <span class="chip">Menu Curated</span>
               <span class="chip">Fleet Ready</span>
@@ -124,6 +124,17 @@ import Nav from '../components/Nav.astro';
     </div>
   </section>
 
+  <!-- Parallax Band -->
+  <section class="parallax-band mt-16 sm:mt-20 mb-16 sm:mb-20">
+    <div class="parallax-content container-npa py-16 sm:py-20">
+      <div class="reveal max-w-2xl">
+        <div class="section-eyebrow">Experience</div>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Rasa, tampilan, dan operasional yang terasa premium.</h2>
+        <p class="mt-3 text-[color:var(--muted)]">Kami menjaga standar kualitas agar setiap layanan tampil konsisten, elegan, dan siap skala.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Services -->
   <section id="services" class="mt-20 sm:mt-28">
     <div class="container-npa">
@@ -167,10 +178,11 @@ import Nav from '../components/Nav.astro';
     </div>
   </section>
 
+
   <!-- Why NPA -->
   <section class="mt-20 sm:mt-28">
-    <div class="container-npa grid lg:grid-cols-12 gap-10 items-center">
-      <div class="lg:col-span-5 reveal">
+    <div class="container-npa grid lg:grid-cols-12 gap-10 items-start lg:items-stretch">
+      <div class="lg:col-span-5 reveal h-full flex flex-col">
         <div class="section-eyebrow">Why NPA</div>
         <h2 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Detail kecil yang menjaga konsistensi layanan.</h2>
         <p class="mt-4 text-[color:var(--muted)]">Kami menggabungkan kontrol kualitas, pengelolaan operasional, dan reporting yang transparan agar klien merasakan layanan premium yang stabil.</p>
@@ -194,38 +206,38 @@ import Nav from '../components/Nav.astro';
         </div>
       </div>
       <div class="lg:col-span-7 reveal" style="transition-delay: 120ms">
-        <div class="premium-card luxe rounded-2xl p-5">
-          <div class="grid sm:grid-cols-2 gap-4">
+        <div class="premium-card luxe rounded-2xl p-5 h-full flex flex-col">
+          <div class="grid sm:grid-cols-2 gap-3">
             <div class="stat-card">
               <div class="flex items-center gap-2">
-                <span class="material-icons-outlined text-brand-600">track_changes</span>
+                <span class="material-icons-outlined text-brand-600 text-xl">track_changes</span>
                 KPI Tracking
               </div>
               <div class="text-sm text-[color:var(--muted)] mt-2">Monitoring performa rutin dengan pelaporan bulanan.</div>
             </div>
             <div class="stat-card">
               <div class="flex items-center gap-2">
-                <span class="material-icons-outlined text-brand-600">shield</span>
+                <span class="material-icons-outlined text-brand-600 text-xl">shield</span>
                 Compliance
               </div>
               <div class="text-sm text-[color:var(--muted)] mt-2">Kepatuhan pada standar hygiene dan keselamatan kerja.</div>
             </div>
             <div class="stat-card">
               <div class="flex items-center gap-2">
-                <span class="material-icons-outlined text-brand-600">local_shipping</span>
+                <span class="material-icons-outlined text-brand-600 text-xl">local_shipping</span>
                 Fleet Ready
               </div>
               <div class="text-sm text-[color:var(--muted)] mt-2">Kesiapan armada untuk kebutuhan harian atau event.</div>
             </div>
             <div class="stat-card">
               <div class="flex items-center gap-2">
-                <span class="material-icons-outlined text-brand-600">restaurant_menu</span>
+                <span class="material-icons-outlined text-brand-600 text-xl">restaurant_menu</span>
                 Menu Curated
               </div>
               <div class="text-sm text-[color:var(--muted)] mt-2">Menu terkurasi sesuai kebutuhan dan preferensi klien.</div>
             </div>
           </div>
-          <div class="mt-5 text-sm text-[color:var(--muted)]">Proses kerja terstruktur tanpa mengurangi fleksibilitas layanan.</div>
+          <div class="mt-4 text-sm text-[color:var(--muted)]">Proses kerja terstruktur tanpa mengurangi fleksibilitas layanan.</div>
         </div>
       </div>
     </div>
@@ -356,9 +368,7 @@ import Nav from '../components/Nav.astro';
   </footer>
 
   <a class="whatsapp-pill" href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-    <svg viewBox="0 0 32 32" class="h-7 w-7" aria-hidden="true">
-      <path fill="currentColor" d="M19.11 17.44c-.31-.16-1.84-.91-2.12-1.02-.29-.1-.5-.16-.71.16-.21.31-.82 1.02-1 1.23-.19.21-.37.24-.68.08-.31-.16-1.31-.48-2.5-1.53-.92-.82-1.54-1.84-1.72-2.15-.18-.31-.02-.48.14-.63.14-.14.31-.37.47-.55.16-.19.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.7-.97-2.33-.26-.62-.52-.54-.71-.55-.18-.01-.39-.01-.6-.01-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.6 0 1.53 1.13 3.01 1.28 3.22.16.21 2.22 3.39 5.38 4.75.75.32 1.34.51 1.8.66.76.24 1.45.2 2 .12.61-.09 1.84-.75 2.1-1.47.26-.71.26-1.32.18-1.45-.08-.13-.29-.21-.6-.37zM16.02 26c-1.73 0-3.44-.46-4.95-1.33l-3.58 1.14 1.17-3.48A9.93 9.93 0 0 1 6 16.02C6 10.49 10.49 6 16.02 6c2.67 0 5.19 1.04 7.08 2.93A9.94 9.94 0 0 1 26 16.02C26 21.55 21.53 26 16.02 26zm0-21.5c-3.37 0-6.51 1.31-8.9 3.69a12.5 12.5 0 0 0-2.64 13.48L2 30l8.5-2.72a12.45 12.45 0 0 0 5.52 1.28C22.62 28.56 28 23.19 28 16.56c0-3.35-1.31-6.49-3.7-8.86A12.44 12.44 0 0 0 16.02 4.5z"/>
-    </svg>
+    <i class="fa-brands fa-whatsapp text-2xl" aria-hidden="true"></i>
   </a>
 
   <script>
@@ -375,5 +385,35 @@ import Nav from '../components/Nav.astro';
     );
 
     revealElements.forEach((el) => observer.observe(el));
+
+    const card = document.querySelector('[data-parallax-card]');
+    const layers = document.querySelectorAll('[data-parallax-depth]');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (card && !prefersReducedMotion) {
+      const handleMove = (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        const rotateX = y * -6;
+        const rotateY = x * 6;
+        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+        layers.forEach((layer) => {
+          const depth = Number(layer.dataset.parallaxDepth || 0.2);
+          const translateX = x * depth * 20;
+          const translateY = y * depth * 20;
+          layer.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+        });
+      };
+
+      const reset = () => {
+        card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+        layers.forEach((layer) => (layer.style.transform = 'translate3d(0,0,0)'));
+      };
+
+      card.addEventListener('mousemove', handleMove);
+      card.addEventListener('mouseleave', reset);
+    }
   </script>
 </BaseLayout>

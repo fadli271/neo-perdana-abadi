@@ -105,6 +105,44 @@ html, body {
   z-index: 0;
 }
 
+.parallax-layer {
+  will-change: transform;
+  transition: transform 120ms ease;
+}
+
+.parallax-tilt {
+  transform-style: preserve-3d;
+}
+
+.parallax-band {
+  position: relative;
+  min-height: 260px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background-image: url('https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.parallax-band::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.78));
+}
+
+.parallax-band .parallax-content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .parallax-band {
+    background-attachment: scroll;
+  }
+}
+
 @keyframes heroSweep {
   0% { transform: translateX(-8%) translateY(-4%); }
   50% { transform: translateX(6%) translateY(3%); }
@@ -163,7 +201,7 @@ html, body {
 .stat-card {
   border: 1px solid var(--border);
   background: var(--bg-soft);
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 1rem;
   border-radius: 1rem;
 }
 
