@@ -1,0 +1,24 @@
+---
+const links = [
+  { href: '#solutions', label: 'Solusi' },
+  { href: '#industries', label: 'Industri' },
+  { href: '#about', label: 'Tentang' },
+  { href: '#contact', label: 'Kontak' },
+];
+---
+<header class="w-full bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-[color:var(--border)] sticky top-0 z-40">
+  <div class="container-npa py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3 group">
+      <img src="/brand/logo-neo-perdana-abadi.jpeg" alt="Neo Perdana Abadi" class="h-9 w-auto rounded-sm group-hover:scale-[1.02] transition" />
+      <span class="font-semibold tracking-wide text-[color:var(--text)]">Neo Perdana Abadi</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-[color:var(--muted)]">
+      {links.map(l => (
+        <a href={l.href} class="hover:text-brand-700 transition">{l.label}</a>
+      ))}
+    </nav>
+    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2 bg-[color:var(--text)] text-white hover:opacity-90 shadow-soft transition">
+      <span>Konsultasi</span>
+    </a>
+  </div>
+</header>
