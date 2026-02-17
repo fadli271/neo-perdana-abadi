@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<BaseLayout title="Kebijakan Privasi — PT Neo Perdana Abadi" description="Kebijakan privasi PT Neo Perdana Abadi.">
+  <Nav />
+
+  <main class="container-npa pt-12 sm:pt-16 pb-16">
+    <div class="max-w-3xl">
+      <div class="section-eyebrow">Legal</div>
+      <h1 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Kebijakan Privasi</h1>
+      <p class="mt-4 text-[color:var(--muted)]">
+        Halaman ini menjelaskan bagaimana PT Neo Perdana Abadi mengumpulkan, menggunakan, dan melindungi data yang Anda kirimkan
+        melalui situs ini.
+      </p>
+
+      <div class="mt-10 grid gap-6">
+        <section class="premium-card luxe rounded-2xl p-6">
+          <h2 class="text-lg font-semibold">Data yang Kami Kumpulkan</h2>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Nama, email, nama perusahaan, dan pesan/kebutuhan yang Anda kirimkan melalui formulir atau kanal kontak lainnya.</p>
+        </section>
+
+        <section class="premium-card luxe rounded-2xl p-6">
+          <h2 class="text-lg font-semibold">Penggunaan Data</h2>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Untuk menindaklanjuti permintaan Anda, menyusun proposal, dan komunikasi layanan. Kami tidak menjual data pribadi Anda.</p>
+        </section>
+
+        <section class="premium-card luxe rounded-2xl p-6">
+          <h2 class="text-lg font-semibold">Penyimpanan & Keamanan</h2>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Kami menerapkan langkah-langkah yang wajar untuk melindungi data. Akses dibatasi pada pihak yang berwenang.</p>
+        </section>
+
+        <section class="premium-card luxe rounded-2xl p-6">
+          <h2 class="text-lg font-semibold">Permintaan Perubahan/Penghapusan</h2>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Anda dapat menghubungi kami untuk memperbarui atau menghapus data yang pernah dikirimkan.</p>
+        </section>
+      </div>
+
+      <div class="mt-10 text-xs text-[color:var(--muted)]">
+        Terakhir diperbarui: {new Date().toLocaleDateString('id-ID')}.
+      </div>
+
+      <div class="mt-4 text-sm">
+        <a href="mailto:info@neoperdanaabadi.co.id" class="text-brand-700 hover:text-brand-800">info@neoperdanaabadi.co.id</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,6 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
+
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const contactEmail = 'info@neoperdanaabadi.co.id';
+const whatsappNumber = '6281234567890';
+
+const companyCoverage = 'Indonesia';
+const companyHours = 'Senin–Jumat (kantor); layanan proyek mengikuti SLA';
+const companyLegal = 'Legalitas (NIB/NPWP): tersedia saat proses administrasi';
 ---
 <BaseLayout title="Neo Perdana Abadi — Modern, Premium, Elegant">
   <Nav />
@@ -8,16 +19,15 @@ import Nav from '../components/Nav.astro';
   <!-- Hero -->
   <section class="relative pt-16 sm:pt-24 pb-12 sm:pb-20 overflow-hidden luxury-bg hero-modern">
     <div class="hero-ornament"></div>
-    <div class="absolute inset-0 -z-10 noise-overlay"></div>
     <div class="container-npa grid lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-7 reveal">
         <div class="inline-flex items-center gap-2 chip text-xs mb-5">
           <span class="inline-block h-2 w-2 rounded-full bg-brand-500"></span>
-          Sejak 2015 — Layanan terpadu berskala internasional
+          Sejak 2015 — Mitra operasional untuk kebutuhan perusahaan
         </div>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display leading-[1.05] headline-luxe">
           Katering Premium, Tata Boga
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500"> & Operasional Kelas Dunia</span>
+          <span class="headline-emphasis"> & Operasional Kelas Dunia</span>
         </h1>
         <p class="mt-6 text-lg text-[color:var(--muted)] max-w-2xl">
           PT Neo Perdana Abadi menghadirkan katering & tata boga, rental kendaraan, human resource, serta ATK dengan sistem terukur, pelayanan elegan, dan standar kualitas konsisten.
@@ -33,19 +43,19 @@ import Nav from '../components/Nav.astro';
         <div class="mt-10 grid grid-cols-2 sm:flex sm:flex-wrap gap-6 text-sm text-[color:var(--muted)]">
           <div class="flex items-center gap-2">
             <span class="material-icons-outlined text-brand-600 text-base">verified</span>
-            SOP & QA ketat
+            SOP & QC terdokumentasi
           </div>
           <div class="flex items-center gap-2">
-            <span class="material-icons-outlined text-brand-600 text-base">schedule</span>
-            24/7 Support
+            <span class="material-icons-outlined text-brand-600 text-base">analytics</span>
+            KPI & pelaporan rutin
           </div>
           <div class="flex items-center gap-2">
-            <span class="material-icons-outlined text-brand-600 text-base">insights</span>
-            SLA-driven
+            <span class="material-icons-outlined text-brand-600 text-base">gavel</span>
+            Kontrak & NDA-ready
           </div>
           <div class="flex items-center gap-2">
-            <span class="material-icons-outlined text-brand-600 text-base">public</span>
-            Global-ready
+            <span class="material-icons-outlined text-brand-600 text-base">apartment</span>
+            Multi-site ready
           </div>
         </div>
         <div class="mt-10 divider-luxe"></div>
@@ -54,7 +64,7 @@ import Nav from '../components/Nav.astro';
         <div class="premium-card luxe rounded-2xl p-4 sm:p-6 parallax-tilt" data-parallax-card>
           <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Katering premium" class="w-full h-80 object-cover rounded-xl" loading="lazy" />
           <div class="mt-4">
-            <div class="rounded-2xl bg-[color:var(--bg-soft)] border border-[color:var(--border)] p-4 parallax-layer" data-parallax-depth="0.4">
+            <div class="rounded-2xl bg-white border border-[color:var(--border)] p-4 parallax-layer" data-parallax-depth="0.4">
               <div class="text-xs text-[color:var(--muted)]">Service Level</div>
               <div class="text-3xl font-semibold">99.9% On-time</div>
               <div class="text-sm text-[color:var(--muted)] mt-1">Ketepatan waktu pengiriman & penyajian</div>
@@ -70,35 +80,78 @@ import Nav from '../components/Nav.astro';
     </div>
   </section>
 
+  <!-- Proof Strip -->
+  <section class="-mt-8 sm:-mt-10">
+    <div class="container-npa">
+      <div class="proof-strip grid sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
+        {[ 
+          { k: '2015', v: 'Beroperasi sejak' },
+          { k: '< 24 jam', v: 'Respons awal permintaan' },
+          { k: 'Multi-site', v: 'Skema layanan untuk banyak lokasi' },
+          { k: 'SOP + KPI', v: 'QC checklist & report berkala' },
+        ].map((item, idx) => (
+          <div class={`proof-item ${idx === 0 ? '' : 'border-t sm:border-t-0 sm:border-l'} border-[color:var(--border)] reveal`}>
+            <div class="min-w-0">
+              <div class="proof-k">{item.k}</div>
+              <div class="proof-v">{item.v}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-4 fine-print reveal" style="transition-delay: 60ms">Angka & cakupan dapat disesuaikan sesuai kontrak dan kebutuhan proyek.</div>
+    </div>
+  </section>
+
   <!-- About -->
-  <section id="about" class="mt-16 sm:mt-24">
+  <section id="about" class="section-block-tight">
     <div class="container-npa grid lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-6 reveal">
         <div class="section-eyebrow">Tentang Kami</div>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Bekerja rapi, bergerak cepat, hasil konsisten.</h2>
-        <p class="mt-4 text-[color:var(--muted)]">Sejak 2015, kami membangun reputasi lewat kualitas rasa, ketepatan operasional, serta SDM yang profesional. Setiap layanan dirancang agar efisien, aman, dan selaras dengan standar perusahaan global.</p>
-        <div class="mt-6 grid sm:grid-cols-2 gap-4">
-          <div class="premium-card luxe rounded-xl p-5">
-            <div class="text-3xl font-semibold">10+ Tahun</div>
-            <div class="text-sm text-[color:var(--muted)]">pengalaman industri</div>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Vendor operasional yang rapi, bukan sekadar event.</h2>
+        <p class="mt-4 text-[color:var(--muted)] max-w-xl">Sejak 2015, kami mengelola layanan yang menuntut konsistensi: ritme produksi, distribusi, dan kontrol kualitas. Fokus kami pada proses yang bisa dipahami procurement, diaudit, dan ditingkatkan.</p>
+
+        <div class="mt-6 spec-table">
+          <div class="spec-row">
+            <div class="spec-k">Tahun berdiri</div>
+            <div class="spec-v">2015</div>
           </div>
-          <div class="premium-card luxe rounded-xl p-5">
-            <div class="text-3xl font-semibold">Multi-service</div>
-            <div class="text-sm text-[color:var(--muted)]">satu kontrak, banyak solusi</div>
+          <div class="spec-row">
+            <div class="spec-k">Model kerja</div>
+            <div class="spec-v">SOP • KPI • Review</div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-k">Skema kontrak</div>
+            <div class="spec-v">Single-service / Multi-service</div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-k">Dokumen</div>
+            <div class="spec-v">Proposal • SLA • NDA (opsional)</div>
           </div>
         </div>
       </div>
       <div class="lg:col-span-6 reveal" style="transition-delay: 120ms">
-        <div class="premium-card luxe rounded-2xl p-4">
-          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80" alt="Tata boga" class="w-full h-80 object-cover rounded-xl" loading="lazy" />
-          <div class="mt-4 flex items-center justify-between text-sm text-[color:var(--muted)]">
-            <div class="flex items-center gap-2">
-              <span class="material-icons-outlined text-brand-600 text-base">stars</span>
-              Premium ingredients
+        <div class="about-quote p-6 sm:p-7">
+          <div class="flex items-center justify-between gap-6">
+            <div class="about-quote-mark" aria-hidden="true">“</div>
+            <div class="section-eyebrow">Prinsip Kerja</div>
+          </div>
+          <div class="mt-5 text-xl sm:text-2xl font-display headline-luxe">Output stabil datang dari kontrol yang stabil.</div>
+          <p class="mt-3 text-[color:var(--muted)]">Kami menyiapkan SOP, ritme QC, dan pelaporan agar klien bisa memantau performa tanpa micromanage operasional harian.</p>
+          <div class="mt-5 dossier-rule"></div>
+          <div class="mt-4 grid sm:grid-cols-2 gap-4">
+            <div class="dossier-item">
+              <div>
+                <strong>QC Checklist</strong>
+                <div class="fine-print">Kontrol kebersihan & kualitas</div>
+              </div>
+              <div class="dossier-tag">QC</div>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="material-icons-outlined text-brand-600 text-base">verified_user</span>
-              Quality assurance
+            <div class="dossier-item">
+              <div>
+                <strong>KPI Report</strong>
+                <div class="fine-print">Metrik & evaluasi berkala</div>
+              </div>
+              <div class="dossier-tag">KPI</div>
             </div>
           </div>
         </div>
@@ -106,37 +159,59 @@ import Nav from '../components/Nav.astro';
     </div>
   </section>
 
-  <!-- Trust -->
-  <section class="mt-16 sm:mt-24">
-    <div class="container-npa">
-      <div class="reveal">
-        <div class="section-eyebrow">Trusted By</div>
-        <h2 class="mt-3 text-2xl sm:text-3xl font-display headline-luxe">Dipercaya oleh berbagai sektor.</h2>
-        <p class="mt-2 text-[color:var(--muted)]">Logo klien dapat ditambahkan setelah onboarding.</p>
+  <!-- Evidence -->
+  <section class="section-block-tight">
+    <div class="container-npa grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-5 reveal">
+        <div class="section-eyebrow">Evidence</div>
+        <h2 class="mt-3 text-2xl sm:text-3xl font-display headline-luxe">Bukti yang mudah dipahami procurement.</h2>
+        <p class="mt-4 text-[color:var(--muted)]">Kami bisa menyiapkan proposal, SLA, dan ritme pelaporan. Untuk daftar klien, kami tampilkan sesuai persetujuan.</p>
+        <div class="mt-6 wordmark-wall">
+          {[
+            'Energi & Tambang',
+            'Logistik',
+            'Manufaktur',
+            'Perhotelan',
+            'Kesehatan',
+            'Pemerintahan',
+          ].map((name) => (
+            <div class="wordmark-pill reveal">
+              <span class="dot" aria-hidden="true"></span>
+              <span class="font-semibold">{name}</span>
+            </div>
+          ))}
+        </div>
       </div>
-      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
-        {['Energy Group', 'Logistics Co.', 'Hospitality', 'Manufacturing'].map((name) => (
-          <div class="premium-card rounded-xl p-4 text-center reveal">
-            <div class="text-sm font-semibold text-[color:var(--muted)]">{name}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
 
-  <!-- Parallax Band -->
-  <section class="parallax-band mt-16 sm:mt-20 mb-16 sm:mb-20">
-    <div class="parallax-content container-npa py-16 sm:py-20">
-      <div class="reveal max-w-2xl">
-        <div class="section-eyebrow">Experience</div>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Rasa, tampilan, dan operasional yang terasa premium.</h2>
-        <p class="mt-3 text-[color:var(--muted)]">Kami menjaga standar kualitas agar setiap layanan tampil konsisten, elegan, dan siap skala.</p>
+      <div class="lg:col-span-7 reveal" style="transition-delay: 120ms">
+        <div class="dossier-panel p-6 sm:p-7">
+          <div class="section-eyebrow">Artefak</div>
+          <div class="mt-3 text-xl sm:text-2xl font-display headline-luxe">Dokumen yang biasanya dibutuhkan di fase procurement.</div>
+          <div class="mt-4 text-sm text-[color:var(--muted)]">Format dan detail menyesuaikan scope layanan, lokasi, dan kontrak.</div>
+          <div class="mt-6 dossier-list">
+            {[
+              { t: 'Proposal & ruang lingkup kerja', tag: 'Proposal' },
+              { t: 'SLA (response window & deliverables)', tag: 'SLA' },
+              { t: 'QC checklist & audit cadence', tag: 'QC' },
+              { t: 'KPI report (bulanan/berkala)', tag: 'KPI' },
+              { t: 'Dokumen legal (NIB/NPWP) saat administrasi', tag: 'Legal' },
+              { t: 'NDA (opsional) untuk kebutuhan klien', tag: 'NDA' },
+            ].map((d) => (
+              <div class="dossier-item">
+                <div><strong>{d.t}</strong></div>
+                <div class="dossier-tag">{d.tag}</div>
+              </div>
+            ))}
+          </div>
+          <div class="mt-5 dossier-rule"></div>
+          <div class="mt-4 fine-print">Daftar klien dapat ditampilkan sesuai persetujuan dan kebijakan komunikasi.</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="mt-20 sm:mt-28">
+  <section id="services" class="section-block">
     <div class="container-npa">
       <div class="flex items-end justify-between gap-6 reveal">
         <div>
@@ -145,142 +220,189 @@ import Nav from '../components/Nav.astro';
         </div>
         <a href="#contact" class="hidden sm:inline-flex text-brand-600 hover:text-brand-700">Request proposal</a>
       </div>
-      <div class="mt-8 grid md:grid-cols-4 gap-6">
-        <div class="premium-card luxe rounded-2xl p-6 reveal">
-          <div class="h-11 w-11 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-700">
-            <span class="material-icons-outlined">restaurant</span>
+      <div class="mt-8 grid lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-7 reveal">
+          <div class="service-feature p-6 sm:p-7">
+            <div class="flex items-start justify-between gap-6">
+              <div>
+                <div class="section-eyebrow">Featured Capability</div>
+                <h3 class="mt-3 text-2xl sm:text-3xl font-display headline-luxe">Katering & Tata Boga</h3>
+                <p class="mt-3 text-sm text-[color:var(--muted)] max-w-xl">Dirancang untuk ritme operasional perusahaan: menu terkurasi, hygiene-first, dan kontrol kualitas berlapis.</p>
+              </div>
+              <div class="h-12 w-12 rounded-2xl bg-brand-500/8 border border-brand-500/20 flex items-center justify-center text-brand-700">
+                <span class="material-icons-outlined">restaurant</span>
+              </div>
+            </div>
+            <div class="mt-6 dossier-list">
+              <div class="dossier-item">
+                <div><strong>Output</strong><div class="fine-print">Harian / event / multi-site</div></div>
+                <div class="dossier-tag">Delivery</div>
+              </div>
+              <div class="dossier-item">
+                <div><strong>Quality Control</strong><div class="fine-print">Checklist, sampling, audit berkala</div></div>
+                <div class="dossier-tag">QC</div>
+              </div>
+              <div class="dossier-item">
+                <div><strong>Reporting</strong><div class="fine-print">KPI & evaluasi rutin sesuai kontrak</div></div>
+                <div class="dossier-tag">KPI</div>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="#contact" class="btn-primary inline-flex items-center justify-center">Request Proposal</a>
+              <a href="#process" class="btn-outline inline-flex items-center justify-center">Lihat Alur Kerja</a>
+            </div>
           </div>
-          <h3 class="mt-4 font-semibold">Katering & Tata Boga</h3>
-          <p class="mt-2 text-sm text-[color:var(--muted)]">Menu fleksibel, standar higienis, dan presentasi premium untuk kebutuhan harian dan event.</p>
         </div>
-        <div class="premium-card luxe rounded-2xl p-6 reveal" style="transition-delay: 80ms">
-          <div class="h-11 w-11 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-700">
-            <span class="material-icons-outlined">directions_bus</span>
+
+        <div class="lg:col-span-5 reveal" style="transition-delay: 120ms">
+          <div class="service-mini">
+            <div class="service-mini-row">
+              <div>
+                <div class="service-mini-title">Rental Kendaraan</div>
+                <div class="service-mini-desc">Unit terawat, driver, dan kontrol operasional berlapis.</div>
+              </div>
+              <div class="service-mini-meta">Fleet</div>
+            </div>
+            <div class="service-mini-row">
+              <div>
+                <div class="service-mini-title">Human Resource</div>
+                <div class="service-mini-desc">Rekrutmen, payroll, dan pengelolaan SDM berbasis SLA.</div>
+              </div>
+              <div class="service-mini-meta">People</div>
+            </div>
+            <div class="service-mini-row">
+              <div>
+                <div class="service-mini-title">ATK & Pengadaan</div>
+                <div class="service-mini-desc">Pengadaan cepat, kontrol kualitas, dan lead time yang jelas.</div>
+              </div>
+              <div class="service-mini-meta">Supply</div>
+            </div>
           </div>
-          <h3 class="mt-4 font-semibold">Rental Kendaraan</h3>
-          <p class="mt-2 text-sm text-[color:var(--muted)]">Unit terawat, driver profesional, tracking, dan kontrol operasional berlapis.</p>
-        </div>
-        <div class="premium-card luxe rounded-2xl p-6 reveal" style="transition-delay: 160ms">
-          <div class="h-11 w-11 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-700">
-            <span class="material-icons-outlined">groups</span>
-          </div>
-          <h3 class="mt-4 font-semibold">Human Resource</h3>
-          <p class="mt-2 text-sm text-[color:var(--muted)]">Rekrutmen, payroll, dan pengelolaan SDM dengan SLA dan kepatuhan tinggi.</p>
-        </div>
-        <div class="premium-card luxe rounded-2xl p-6 reveal" style="transition-delay: 240ms">
-          <div class="h-11 w-11 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-700">
-            <span class="material-icons-outlined">inventory_2</span>
-          </div>
-          <h3 class="mt-4 font-semibold">ATK & Pengadaan</h3>
-          <p class="mt-2 text-sm text-[color:var(--muted)]">Pengadaan cepat, harga kompetitif, dan kontrol kualitas untuk kebutuhan kantor.</p>
+          <div class="mt-4 fine-print">Multi-service memungkinkan satu kontrak untuk beberapa kebutuhan operasional.</div>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- Why NPA -->
-  <section class="mt-20 sm:mt-28">
-    <div class="container-npa grid lg:grid-cols-12 gap-10 items-start lg:items-stretch">
-      <div class="lg:col-span-5 reveal h-full flex flex-col">
-        <div class="section-eyebrow">Why NPA</div>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Detail kecil yang menjaga konsistensi layanan.</h2>
-        <p class="mt-4 text-[color:var(--muted)]">Kami menggabungkan kontrol kualitas, pengelolaan operasional, dan reporting yang transparan agar klien merasakan layanan premium yang stabil.</p>
-        <div class="mt-6 grid sm:grid-cols-2 gap-3">
-          <div class="stat-card">
-            <div class="text-xl font-semibold">SOP & QA</div>
-            <div class="text-sm text-[color:var(--muted)]">Audit rutin & dokumentasi</div>
+  <!-- Operating Model -->
+  <section id="process" class="section-block">
+    <div class="container-npa grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-5 reveal">
+        <div class="section-eyebrow">Operating Model</div>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Kontrol operasional yang bisa diaudit.</h2>
+        <p class="mt-4 text-[color:var(--muted)]">Bukan sekadar “premium”. Kami bekerja dengan loop yang jelas: standar → eksekusi → pelaporan → perbaikan.</p>
+        <div class="mt-6 dossier-list">
+          <div class="dossier-item">
+            <div>
+              <strong>SOP & QC Checklist</strong>
+              <div class="fine-print">Dokumentasi proses + kontrol kualitas</div>
+            </div>
+            <div class="dossier-tag">Controls</div>
           </div>
-          <div class="stat-card">
-            <div class="text-xl font-semibold">Response &lt; 24h</div>
-            <div class="text-sm text-[color:var(--muted)]">Proaktif & terukur</div>
+          <div class="dossier-item">
+            <div>
+              <strong>SLA & Governance</strong>
+              <div class="fine-print">Kontrak, SLA, dan komunikasi rutin</div>
+            </div>
+            <div class="dossier-tag">Agreement</div>
           </div>
-          <div class="stat-card">
-            <div class="text-xl font-semibold">Custom SLA</div>
-            <div class="text-sm text-[color:var(--muted)]">Sesuai kebutuhan klien</div>
-          </div>
-          <div class="stat-card">
-            <div class="text-xl font-semibold">Multi-service</div>
-            <div class="text-sm text-[color:var(--muted)]">Satu kontrak, banyak solusi</div>
+          <div class="dossier-item">
+            <div>
+              <strong>KPI Report</strong>
+              <div class="fine-print">Pelaporan performa dan evaluasi berkala</div>
+            </div>
+            <div class="dossier-tag">Reporting</div>
           </div>
         </div>
       </div>
+
       <div class="lg:col-span-7 reveal" style="transition-delay: 120ms">
-        <div class="premium-card luxe rounded-2xl p-5 h-full flex flex-col">
-          <div class="grid sm:grid-cols-2 gap-3">
-            <div class="stat-card">
-              <div class="flex items-center gap-2">
-                <span class="material-icons-outlined text-brand-600 text-xl">track_changes</span>
-                KPI Tracking
+        <div class="loop-frame">
+          <svg class="loop-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="loopStroke" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stop-color="rgba(25,53,87,0.18)" />
+                <stop offset="1" stop-color="rgba(199,142,70,0.16)" />
+              </linearGradient>
+            </defs>
+            <path d="M15,18 C35,6 65,6 85,18" fill="none" stroke="url(#loopStroke)" stroke-width="1.2" />
+            <path d="M85,18 C96,36 96,64 85,82" fill="none" stroke="url(#loopStroke)" stroke-width="1.2" />
+            <path d="M85,82 C65,94 35,94 15,82" fill="none" stroke="url(#loopStroke)" stroke-width="1.2" />
+            <path d="M15,82 C4,64 4,36 15,18" fill="none" stroke="url(#loopStroke)" stroke-width="1.2" />
+          </svg>
+
+          <div class="loop-inner">
+            <div class="section-eyebrow">Control Loop</div>
+            <div class="mt-3 text-xl sm:text-2xl font-display headline-luxe">Standar yang menjaga output tetap stabil.</div>
+            <div class="mt-5 loop-grid">
+              <div class="loop-node">
+                <div class="loop-title">1) Controls</div>
+                <div class="loop-desc">SOP, hygiene, QC checklist, dan approval flow.</div>
               </div>
-              <div class="text-sm text-[color:var(--muted)] mt-2">Monitoring performa rutin dengan pelaporan bulanan.</div>
-            </div>
-            <div class="stat-card">
-              <div class="flex items-center gap-2">
-                <span class="material-icons-outlined text-brand-600 text-xl">shield</span>
-                Compliance
+              <div class="loop-node">
+                <div class="loop-title">2) Delivery</div>
+                <div class="loop-desc">Eksekusi onsite, dispatch, dan koordinasi harian.</div>
               </div>
-              <div class="text-sm text-[color:var(--muted)] mt-2">Kepatuhan pada standar hygiene dan keselamatan kerja.</div>
-            </div>
-            <div class="stat-card">
-              <div class="flex items-center gap-2">
-                <span class="material-icons-outlined text-brand-600 text-xl">local_shipping</span>
-                Fleet Ready
+              <div class="loop-node">
+                <div class="loop-title">3) Reporting</div>
+                <div class="loop-desc">KPI, incident log, dan dokumentasi bulanan.</div>
               </div>
-              <div class="text-sm text-[color:var(--muted)] mt-2">Kesiapan armada untuk kebutuhan harian atau event.</div>
-            </div>
-            <div class="stat-card">
-              <div class="flex items-center gap-2">
-                <span class="material-icons-outlined text-brand-600 text-xl">restaurant_menu</span>
-                Menu Curated
+              <div class="loop-node">
+                <div class="loop-title">4) Improvement</div>
+                <div class="loop-desc">Review, action items, dan pembaruan standar.</div>
               </div>
-              <div class="text-sm text-[color:var(--muted)] mt-2">Menu terkurasi sesuai kebutuhan dan preferensi klien.</div>
             </div>
+            <div class="mt-5 dossier-rule"></div>
+            <div class="mt-4 fine-print">Struktur ini cocok untuk kebutuhan procurement: jelas scope, metrik, dan ritme komunikasi.</div>
           </div>
-          <div class="mt-4 text-sm text-[color:var(--muted)]">Proses kerja terstruktur tanpa mengurangi fleksibilitas layanan.</div>
         </div>
-      </div>
-    </div>
-  </section>
 
-
-  <!-- Process -->
-  <section class="mt-20 sm:mt-28">
-    <div class="container-npa">
-      <div class="reveal">
-        <div class="section-eyebrow">Process</div>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Alur kerja yang jelas dan terukur.</h2>
-        <p class="mt-2 text-[color:var(--muted)]">Mulai dari briefing hingga evaluasi berkala.</p>
-      </div>
-      <div class="mt-8 grid md:grid-cols-5 gap-4">
-        {[
-          { title: 'Brief', desc: 'Kebutuhan & scope' },
-          { title: 'Survey', desc: 'Analisis lokasi' },
-          { title: 'Proposal', desc: 'Timeline & biaya' },
-          { title: 'Implement', desc: 'Eksekusi layanan' },
-          { title: 'Review', desc: 'Evaluasi rutin' },
-        ].map((step, idx) => (
-          <div class="premium-card rounded-xl p-4 reveal">
-            <div class="text-xs text-[color:var(--muted)]">0{idx + 1}</div>
-            <div class="mt-2 font-semibold">{step.title}</div>
-            <div class="text-sm text-[color:var(--muted)]">{step.desc}</div>
+        <div class="mt-6">
+          <div class="section-eyebrow reveal">Onboarding</div>
+          <div class="mt-3 onboarding-row">
+            {[
+              { t: 'Brief', d: 'Scope & kebutuhan' },
+              { t: 'Survey', d: 'Analisis lokasi' },
+              { t: 'Proposal', d: 'Timeline & biaya' },
+              { t: 'Kickoff', d: 'SOP & setup' },
+              { t: 'Review', d: 'KPI & evaluasi' },
+            ].map((s, idx) => (
+              <div class="onboarding-step reveal">
+                <div class="onboarding-n" aria-hidden="true">{idx + 1}</div>
+                <div>
+                  <div class="onboarding-t">{s.t}</div>
+                  <div class="onboarding-d">{s.d}</div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Industries -->
-  <section id="industries" class="mt-20 sm:mt-28">
+  <section id="industries" class="section-block">
     <div class="container-npa">
       <div class="reveal">
         <h2 class="text-2xl sm:text-3xl font-display headline-luxe">Industri yang Kami Layani</h2>
-        <p class="mt-2 text-[color:var(--muted)]">Fleksibel untuk skala korporat, proyek, hingga layanan publik.</p>
+        <p class="mt-2 text-[color:var(--muted)]">Ringkas, fokus pada konteks procurement dan skema operasional.</p>
       </div>
-      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {['Korporat', 'Pertambangan', 'Perhotelan', 'Pabrik & Manufaktur', 'Event Organizer', 'Kesehatan', 'Logistik', 'Pemerintahan'].map((name) => (
-          <div class="premium-card luxe rounded-xl p-4 text-center reveal">
-            <div class="text-brand-700 font-medium">{name}</div>
+      <div class="mt-8 industry-list reveal">
+        {[
+          { title: 'Korporat', meta: 'GA / Procurement' },
+          { title: 'Pertambangan', meta: 'Site & camp' },
+          { title: 'Manufaktur', meta: 'Shift & capacity' },
+          { title: 'Perhotelan', meta: 'Service consistency' },
+          { title: 'Logistik', meta: 'Fleet & dispatch' },
+          { title: 'Kesehatan', meta: 'Hygiene focus' },
+          { title: 'Event Organizer', meta: 'Peak-ready' },
+          { title: 'Pemerintahan', meta: 'Tertib administrasi' },
+        ].map((row) => (
+          <div class="industry-row">
+            <div class="industry-name">{row.title}</div>
+            <div class="industry-meta">{row.meta}</div>
           </div>
         ))}
       </div>
@@ -288,52 +410,112 @@ import Nav from '../components/Nav.astro';
   </section>
 
   <!-- Gallery -->
-  <section class="mt-20 sm:mt-28">
+  <section class="section-block">
     <div class="container-npa">
       <div class="reveal">
         <h2 class="text-2xl sm:text-3xl font-display headline-luxe">Visual Standar Premium</h2>
-        <p class="mt-2 text-[color:var(--muted)]">Rasa, tampilan, dan operasional yang konsisten di setiap touchpoint.</p>
+        <p class="mt-2 text-[color:var(--muted)]">Detail plating, kesiapan tim, dan disiplin operasional yang terlihat sejak awal.</p>
       </div>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="premium-card luxe rounded-2xl p-4 reveal">
-          <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=900&q=80" alt="Buffet premium" class="w-full h-64 object-cover rounded-xl" loading="lazy" />
-        </div>
-        <div class="premium-card luxe rounded-2xl p-4 reveal" style="transition-delay: 80ms">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Tim profesional" class="w-full h-64 object-cover rounded-xl" loading="lazy" />
-        </div>
-        <div class="premium-card luxe rounded-2xl p-4 reveal" style="transition-delay: 160ms">
-          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80" alt="Office supplies" class="w-full h-64 object-cover rounded-xl" loading="lazy" />
+      <div class="mt-8 grid md:grid-cols-12 gap-6">
+        <figure class="premium-card luxe rounded-2xl p-4 reveal md:col-span-7 group">
+          <div class="relative overflow-hidden rounded-xl aspect-[16/10]">
+            <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=1400&q=80" alt="Buffet katering premium" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent"></div>
+            <figcaption class="absolute bottom-0 left-0 right-0 p-4 sm:p-5 text-white">
+              <div class="flex items-center justify-between gap-3">
+                <div class="font-semibold">Katering & Tata Boga</div>
+                <span class="chip text-xs" style="background: rgb(255 255 255 / 0.14); border-color: rgb(255 255 255 / 0.18); color: #ffffff;">Presentation</span>
+              </div>
+              <div class="mt-1 text-sm text-white/85">Menu terkurasi, plating rapi, dan alur servis yang konsisten.</div>
+            </figcaption>
+          </div>
+        </figure>
+
+        <figure class="premium-card luxe rounded-2xl p-4 reveal md:col-span-5 group" style="transition-delay: 80ms">
+          <div class="relative overflow-hidden rounded-xl aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1100&q=80" alt="Tim operasional profesional" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/35 via-black/5 to-transparent"></div>
+            <figcaption class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <div class="font-semibold">Tim & SOP</div>
+              <div class="mt-1 text-sm text-white/85">Koordinasi onsite, briefing, dan quality check.</div>
+            </figcaption>
+          </div>
+        </figure>
+
+        <figure class="premium-card luxe rounded-2xl p-4 reveal md:col-span-5 group" style="transition-delay: 160ms">
+          <div class="relative overflow-hidden rounded-xl aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1100&q=80" alt="Pengadaan dan kebutuhan kantor" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/35 via-black/5 to-transparent"></div>
+            <figcaption class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <div class="font-semibold">ATK & Pengadaan</div>
+              <div class="mt-1 text-sm text-white/85">Kontrol kualitas, kerapihan packing, dan lead time.</div>
+            </figcaption>
+          </div>
+        </figure>
+
+        <div class="premium-card luxe rounded-2xl p-6 reveal md:col-span-7" style="transition-delay: 240ms">
+          <div class="section-eyebrow">Standard</div>
+          <div class="mt-3 text-xl sm:text-2xl font-display headline-luxe">Setiap touchpoint dibuat terasa rapi.</div>
+          <div class="mt-3 text-sm text-[color:var(--muted)]">Mulai dari briefing, supply, hingga pelaporan. Kami menjaga detail yang terlihat dan yang tidak terlihat.</div>
+          <div class="mt-6 grid sm:grid-cols-2 gap-3">
+            {[
+              { title: 'Hygiene & Safety', desc: 'Standar kebersihan & prosedur kerja' },
+              { title: 'On-time Delivery', desc: 'Ritme operasional yang disiplin' },
+              { title: 'Reporting', desc: 'Dokumentasi & evaluasi berkala' },
+              { title: 'Service Consistency', desc: 'Output stabil lintas site' },
+            ].map((item) => (
+              <div class="stat-card">
+                <div class="font-semibold">{item.title}</div>
+                <div class="text-sm text-[color:var(--muted)]">{item.desc}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="mt-20 sm:mt-28">
+  <section class="section-block">
     <div class="container-npa grid lg:grid-cols-12 gap-10 items-start">
       <div class="lg:col-span-4 reveal">
         <div class="section-eyebrow">FAQ</div>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Pertanyaan yang sering ditanyakan.</h2>
-        <p class="mt-3 text-[color:var(--muted)]">Jika butuh detail lain, tim kami siap membantu.</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Pertanyaan procurement.</h2>
+        <p class="mt-3 text-[color:var(--muted)]">Jawaban ringkas. Detail lengkap kami sertakan di proposal.</p>
       </div>
-      <div class="lg:col-span-8 grid gap-4">
-        {[
-          { q: 'Apakah layanan tersedia di luar kota?', a: 'Ya, cakupan layanan fleksibel sesuai kebutuhan proyek.' },
-          { q: 'Berapa minimum order untuk katering?', a: 'Disesuaikan dengan jenis layanan dan jumlah peserta.' },
-          { q: 'Apakah menyediakan kontrak jangka panjang?', a: 'Tersedia opsi kontrak jangka pendek hingga multi-year.' },
-          { q: 'Bagaimana mekanisme quality control?', a: 'QC dilakukan rutin dengan SOP dan audit berkala.' },
-        ].map((item) => (
-          <div class="faq-item reveal">
-            <div class="font-semibold">{item.q}</div>
-            <div class="mt-2 text-sm text-[color:var(--muted)]">{item.a}</div>
-          </div>
-        ))}
+      <div class="lg:col-span-8 reveal">
+        <div class="faq-accordion">
+          {[
+            {
+              q: 'Apakah tersedia kontrak jangka panjang dan SLA?',
+              a: 'Ya. Kontrak dapat jangka pendek hingga multi-year. SLA disusun sesuai scope (response window, deliverables, dan ritme pelaporan).',
+            },
+            {
+              q: 'Bagaimana mekanisme quality control & compliance?',
+              a: 'Kami menyiapkan SOP dan QC checklist, dengan kontrol rutin serta evaluasi berkala. Detail kontrol menyesuaikan jenis layanan dan lokasi.',
+            },
+            {
+              q: 'Apakah bisa multi-site dan di luar kota?',
+              a: 'Bisa. Skema layanan fleksibel untuk onsite, multi-site, dan kebutuhan proyek. Cakupan dan timeline ditentukan pada fase survey dan proposal.',
+            },
+          ].map((item) => (
+            <details>
+              <summary>
+                <span>{item.q}</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="faq-body">
+                <p>{item.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section id="contact" class="mt-20 sm:mt-28 mb-24">
+  <section id="contact" class="section-block mb-24">
     <div class="container-npa grid lg:grid-cols-12 gap-10 items-start lg:items-stretch">
       <div class="lg:col-span-7 reveal h-full flex flex-col">
         <div class="section-eyebrow">Mulai Kolaborasi</div>
@@ -360,19 +542,91 @@ import Nav from '../components/Nav.astro';
             </div>
             <div class="flex items-center gap-2">
               <span class="material-icons-outlined text-brand-600 text-xl">task_alt</span>
-              SLA & standar kualitas tertulis
+              Dokumen legal perusahaan (NIB/NPWP)
             </div>
           </div>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay: 120ms">
-        <form class="premium-card luxe rounded-2xl p-6 grid gap-4 h-full">
-          <input type="text" placeholder="Nama" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
-          <input type="email" placeholder="Email" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
-          <input type="text" placeholder="Perusahaan" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
-          <textarea rows="4" placeholder="Ceritakan kebutuhan Anda" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30"></textarea>
-          <button class="rounded-lg bg-brand-500 hover:bg-brand-600 text-white px-5 py-3">Kirim Permintaan</button>
-          <div class="text-xs text-[color:var(--muted)]">Respon &lt; 24 jam. Data Anda aman dan tidak dibagikan.</div>
+        <form class="premium-card luxe rounded-2xl p-6 grid gap-4 h-full" method="post" action="#" novalidate data-proposal-form data-contact-email={contactEmail} data-whatsapp-number={whatsappNumber}>
+          <div class="grid gap-1">
+            <div class="text-sm font-semibold">Request Proposal</div>
+            <div class="text-xs text-[color:var(--muted)]">Isi ringkas agar tim kami bisa estimasi scope & timeline lebih cepat.</div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="grid gap-2">
+              <label for="lead-name" class="text-sm font-medium">Nama</label>
+              <input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Nama lengkap" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30" required />
+            </div>
+            <div class="grid gap-2">
+              <label for="lead-phone" class="text-sm font-medium">No. WhatsApp</label>
+              <input id="lead-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="grid gap-2">
+              <label for="lead-email" class="text-sm font-medium">Email</label>
+              <input id="lead-email" name="email" type="email" autocomplete="email" placeholder="nama@perusahaan.com" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30" required />
+            </div>
+            <div class="grid gap-2">
+              <label for="lead-company" class="text-sm font-medium">Perusahaan</label>
+              <input id="lead-company" name="company" type="text" autocomplete="organization" placeholder="Nama perusahaan" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="grid gap-2">
+              <label for="lead-service" class="text-sm font-medium">Layanan</label>
+              <select id="lead-service" name="service" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30" required>
+                <option value="" selected disabled>Pilih layanan</option>
+                <option value="Katering & Tata Boga">Katering & Tata Boga</option>
+                <option value="Rental Kendaraan">Rental Kendaraan</option>
+                <option value="Human Resource">Human Resource</option>
+                <option value="ATK & Pengadaan">ATK & Pengadaan</option>
+                <option value="Multi-service">Multi-service (gabungan)</option>
+              </select>
+            </div>
+            <div class="grid gap-2">
+              <label for="lead-location" class="text-sm font-medium">Lokasi</label>
+              <input id="lead-location" name="location" type="text" autocomplete="address-level2" placeholder="Kota / area site" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30" required />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="grid gap-2">
+              <label for="lead-volume" class="text-sm font-medium">Estimasi kebutuhan</label>
+              <input id="lead-volume" name="volume" type="text" placeholder="Contoh: 300 pax/hari atau 8 unit" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
+            </div>
+            <div class="grid gap-2">
+              <label for="lead-timeline" class="text-sm font-medium">Timeline</label>
+              <select id="lead-timeline" name="timeline" class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30">
+                <option value="" selected>Fleksibel</option>
+                <option value="< 2 minggu">&lt; 2 minggu</option>
+                <option value="2–4 minggu">2–4 minggu</option>
+                <option value="1–3 bulan">1–3 bulan</option>
+                <option value="> 3 bulan">&gt; 3 bulan</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid gap-2">
+            <label for="lead-message" class="text-sm font-medium">Detail kebutuhan</label>
+            <textarea id="lead-message" name="message" rows="4" placeholder="Tambahkan detail: jam operasional, scope, kebutuhan khusus, dan standar compliance." class="bg-white border border-[color:var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500/30" required></textarea>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-3">
+            <button type="button" class="rounded-lg bg-[color:var(--text)] hover:opacity-95 text-white px-5 py-3" data-compose-email>Kirim via Email</button>
+            <button type="button" class="rounded-lg bg-[#25d366] hover:opacity-95 text-white px-5 py-3" data-compose-whatsapp>Kirim via WhatsApp</button>
+          </div>
+
+          <div class="text-xs text-[color:var(--muted)]">
+            Respon &lt; 24 jam. Dengan mengirim permintaan, Anda setuju pada
+            <a href={`${baseUrl}privacy`} class="text-brand-700 hover:text-brand-800">Kebijakan Privasi</a>.
+          </div>
+
+          <div class="hidden text-sm rounded-xl border border-[color:var(--border)] bg-white px-4 py-3" data-form-status></div>
         </form>
       </div>
     </div>
@@ -382,18 +636,42 @@ import Nav from '../components/Nav.astro';
   <footer class="border-t border-[color:var(--border)] py-10 bg-white">
     <div class="container-npa flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[color:var(--muted)]">
       <div class="flex items-center gap-3">
-        <img src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`}brand/logo-neo-perdana-abadi.jpeg`} alt="Neo Perdana Abadi" class="h-6 w-auto rounded-sm" />
-        <span>© {new Date().getFullYear()} PT Neo Perdana Abadi</span>
+        <img src={`${baseUrl}brand/logo-neo-perdana-abadi.jpeg`} alt="Neo Perdana Abadi" class="h-6 w-auto rounded-sm" />
+        <div class="grid">
+          <span>© {new Date().getFullYear()} PT Neo Perdana Abadi</span>
+          <span class="text-xs">Vendor operasional untuk kebutuhan multi-service.</span>
+        </div>
       </div>
-      <div class="flex items-center gap-6">
-        <a href="#" class="hover:text-brand-700">Kebijakan Privasi</a>
-        <a href="#" class="hover:text-brand-700">Syarat & Ketentuan</a>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+        <a href={`mailto:${contactEmail}`} class="inline-flex items-center gap-2 hover:text-brand-700">
+          <span class="material-icons-outlined text-base" aria-hidden="true">mail</span>
+          {contactEmail}
+        </a>
+        <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 hover:text-brand-700">
+          <span class="material-icons-outlined text-base" aria-hidden="true">chat</span>
+          WhatsApp
+        </a>
+        <span class="hidden sm:inline text-[color:var(--border)]">|</span>
+        <div class="inline-flex items-center gap-2 text-xs">
+          <span class="material-icons-outlined text-base" aria-hidden="true">location_on</span>
+          {companyCoverage}
+        </div>
+        <div class="inline-flex items-center gap-2 text-xs">
+          <span class="material-icons-outlined text-base" aria-hidden="true">schedule</span>
+          {companyHours}
+        </div>
+        <div class="inline-flex items-center gap-2 text-xs">
+          <span class="material-icons-outlined text-base" aria-hidden="true">badge</span>
+          {companyLegal}
+        </div>
+        <a href={`${baseUrl}privacy`} class="hover:text-brand-700">Kebijakan Privasi</a>
+        <a href={`${baseUrl}terms`} class="hover:text-brand-700">Syarat & Ketentuan</a>
       </div>
     </div>
   </footer>
 
-  <a class="whatsapp-pill" href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-    <i class="fa-brands fa-whatsapp text-2xl" aria-hidden="true"></i>
+  <a class="whatsapp-pill" href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" aria-label="WhatsApp">
+    <span class="material-icons-outlined" aria-hidden="true">chat</span>
   </a>
 
   <script>
@@ -415,7 +693,9 @@ import Nav from '../components/Nav.astro';
     const layers = document.querySelectorAll('[data-parallax-depth]');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (card && !prefersReducedMotion) {
+    if (card instanceof HTMLElement && !prefersReducedMotion) {
+      const layerEls = Array.from(layers).filter((el): el is HTMLElement => el instanceof HTMLElement);
+
       const handleMove = (e) => {
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -424,7 +704,7 @@ import Nav from '../components/Nav.astro';
         const rotateY = x * 6;
         card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
-        layers.forEach((layer) => {
+        layerEls.forEach((layer) => {
           const depth = Number(layer.dataset.parallaxDepth || 0.2);
           const translateX = x * depth * 20;
           const translateY = y * depth * 20;
@@ -434,11 +714,105 @@ import Nav from '../components/Nav.astro';
 
       const reset = () => {
         card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
-        layers.forEach((layer) => (layer.style.transform = 'translate3d(0,0,0)'));
+        layerEls.forEach((layer) => (layer.style.transform = 'translate3d(0,0,0)'));
       };
 
       card.addEventListener('mousemove', handleMove);
       card.addEventListener('mouseleave', reset);
+    }
+
+    const proposalForm = document.querySelector('[data-proposal-form]');
+    const statusEl = document.querySelector('[data-form-status]');
+    const emailBtn = document.querySelector('[data-compose-email]');
+    const waBtn = document.querySelector('[data-compose-whatsapp]');
+
+    const showStatus = (text) => {
+      if (!(statusEl instanceof HTMLElement)) return;
+      statusEl.textContent = text;
+      statusEl.classList.remove('hidden');
+    };
+
+    const getContactEmail = () => {
+      if (!(proposalForm instanceof HTMLFormElement)) return '';
+      return String(proposalForm.dataset.contactEmail || '').trim();
+    };
+
+    const getWhatsappNumber = () => {
+      if (!(proposalForm instanceof HTMLFormElement)) return '';
+      return String(proposalForm.dataset.whatsappNumber || '').trim();
+    };
+
+    const getFieldValue = (name) => {
+      if (!(proposalForm instanceof HTMLFormElement)) return '';
+      const el = proposalForm.elements.namedItem(name);
+      if (!el) return '';
+      if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement || el instanceof HTMLSelectElement) {
+        return String(el.value || '').trim();
+      }
+      return '';
+    };
+
+    const buildMessage = () => {
+      const parts = [
+        `Nama: ${getFieldValue('name')}`,
+        `Perusahaan: ${getFieldValue('company') || '-'}`,
+        `Email: ${getFieldValue('email')}`,
+        `WhatsApp: ${getFieldValue('phone') || '-'}`,
+        `Layanan: ${getFieldValue('service')}`,
+        `Lokasi: ${getFieldValue('location')}`,
+        `Estimasi: ${getFieldValue('volume') || '-'}`,
+        `Timeline: ${getFieldValue('timeline') || 'Fleksibel'}`,
+        '',
+        'Detail:',
+        getFieldValue('message'),
+      ];
+      return parts.join('\n');
+    };
+
+    const ensureValid = () => {
+      if (!(proposalForm instanceof HTMLFormElement)) return false;
+      const ok = proposalForm.checkValidity();
+      if (!ok) {
+        proposalForm.reportValidity();
+        showStatus('Lengkapi kolom yang wajib diisi untuk melanjutkan.');
+      }
+      return ok;
+    };
+
+    if (proposalForm instanceof HTMLFormElement) {
+      proposalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        showStatus('Gunakan tombol "Kirim via Email" atau "Kirim via WhatsApp" untuk mengirim permintaan.');
+      });
+    }
+
+    if (emailBtn instanceof HTMLButtonElement) {
+      emailBtn.addEventListener('click', () => {
+        if (!ensureValid()) return;
+        const to = getContactEmail();
+        if (!to) {
+          showStatus('Email tujuan belum diatur.');
+          return;
+        }
+        const subject = encodeURIComponent('Request Proposal — PT Neo Perdana Abadi');
+        const body = encodeURIComponent(buildMessage());
+        window.location.href = `mailto:${encodeURIComponent(to)}?subject=${subject}&body=${body}`;
+      });
+    }
+
+    if (waBtn instanceof HTMLButtonElement) {
+      waBtn.addEventListener('click', () => {
+        if (!ensureValid()) return;
+        const number = getWhatsappNumber();
+        if (!number) {
+          showStatus('Nomor WhatsApp tujuan belum diatur.');
+          return;
+        }
+        const text = encodeURIComponent(buildMessage());
+        const url = `https://wa.me/${encodeURIComponent(number)}?text=${text}`;
+        const w = window.open(url, '_blank');
+        if (w) w.opener = null;
+      });
     }
   </script>
 </BaseLayout>

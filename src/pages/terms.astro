@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<BaseLayout title="Syarat & Ketentuan — PT Neo Perdana Abadi" description="Syarat dan ketentuan penggunaan situs PT Neo Perdana Abadi.">
+  <Nav />
+
+  <main class="container-npa pt-12 sm:pt-16 pb-16">
+    <div class="max-w-3xl">
+      <div class="section-eyebrow">Legal</div>
+      <h1 class="mt-3 text-3xl sm:text-4xl font-display headline-luxe">Syarat & Ketentuan</h1>
+      <p class="mt-4 text-[color:var(--muted)]">
+        Dengan mengakses situs ini, Anda menyetujui syarat dan ketentuan berikut. Konten pada situs ini bersifat informatif dan dapat
+        berubah sewaktu-waktu.
+      </p>
+
+      <div class="mt-10 grid gap-6">
+        <section class="premium-card luxe rounded-2xl p-6">
+          <h2 class="text-lg font-semibold">Penggunaan Informasi</h2>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Informasi layanan, materi, dan harga (jika ada) bukan merupakan penawaran yang mengikat sebelum ada proposal/kontrak tertulis.</p>
+        </section>
+
+        <section class="premium-card luxe rounded-2xl p-6">
+          <h2 class="text-lg font-semibold">Kekayaan Intelektual</h2>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Logo, merek, dan materi visual adalah milik PT Neo Perdana Abadi. Dilarang menggunakan tanpa izin tertulis.</p>
+        </section>
+
+        <section class="premium-card luxe rounded-2xl p-6">
+          <h2 class="text-lg font-semibold">Tautan Pihak Ketiga</h2>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Situs ini dapat memuat tautan pihak ketiga. Kami tidak bertanggung jawab atas konten atau kebijakan situs tersebut.</p>
+        </section>
+
+        <section class="premium-card luxe rounded-2xl p-6">
+          <h2 class="text-lg font-semibold">Kontak</h2>
+          <p class="mt-2 text-sm text-[color:var(--muted)]">Untuk pertanyaan terkait penggunaan situs ini, silakan hubungi tim kami melalui kanal kontak yang tersedia.</p>
+        </section>
+      </div>
+
+      <div class="mt-10 text-xs text-[color:var(--muted)]">
+        Terakhir diperbarui: {new Date().toLocaleDateString('id-ID')}.
+      </div>
+
+      <div class="mt-4 text-sm">
+        <a href="mailto:info@neoperdanaabadi.co.id" class="text-brand-700 hover:text-brand-800">info@neoperdanaabadi.co.id</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
