@@ -191,10 +191,10 @@ html, body {
 }
 
 .chip {
-  border: 1px solid var(--border);
-  background: var(--bg-soft);
+  border: 1px solid color-mix(in oklab, var(--accent-500) 25%, var(--border));
+  background: color-mix(in oklab, var(--accent-500) 6%, #ffffff);
   color: var(--text);
-  padding: 0.45rem 0.9rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 999px;
 }
 
